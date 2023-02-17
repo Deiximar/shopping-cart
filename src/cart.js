@@ -117,7 +117,9 @@ let totalAmount = () => {
 
         label.innerHTML = `
             <h2>Total Bill: $ ${amount}</h2>
-            <button onclick="" class="checkout">Checkout</button>
+            <a href="checkout.html">
+                <button class="checkout">Checkout</button>
+            </a>
             <button onclick="clearCart()" class="removeAll">Clear Cart</button>
         `;
         return amount
@@ -125,3 +127,4 @@ let totalAmount = () => {
 }
 
 totalAmount();
+

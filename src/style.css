@@ -5,6 +5,7 @@
 }
 body {
     font-family: sans-serif;
+    grid-template-rows: repeat(2);
 }
 
 i {
@@ -15,6 +16,13 @@ a {
     color: #eff1f3;
 }
 
+input {
+    height: 30px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 2px
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
@@ -23,7 +31,6 @@ a {
     background-color: #d8b4a0;
     color: #eff1f3;
     padding: 25px 60px;
-    margin-bottom: 30px;
 }
  
 .cart {
@@ -47,6 +54,7 @@ a {
 }
 
 .shop {
+    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(4, 223px);
     gap: 30px;
@@ -98,6 +106,7 @@ a {
  .text-center {
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 30px;
  }
 
  .HomeBtn,
@@ -161,3 +170,40 @@ a {
 
  }
 
+.checkout-page {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    justify-content: center;
+    height: 100vh;  
+    gap: 50px;  
+}
+
+.info-send form {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 5px));
+    gap: 10px
+}
+
+.full-width {
+    grid-column: 1 / span 2;
+}
+.info-cart {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(1, 320px);
+    gap: 15px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.contact-info {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-column: 2;
+}
+
+.email-info input{
+    width: 100%;
+}
