@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +10,13 @@
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
+
 <body>
     <div class="navbar">
         <a href="index.html">
             <h2>Clothing Store</h2>
         </a>
-        
+
         <a href="cart.html">
             <div class="cart">
                 <i class="bi bi-bag-heart"></i>
@@ -26,31 +28,35 @@
     <div class="checkout-page">
         <div class="contact-info">
             <div class="email-info">
-                <p>Contact information</p>
+                <h3>Contact information</h3>
                 <input placeholder="Email" type="email" name="" id="email">
             </div>
-    
+
             <div class="info-send">
-                <p>Shipping Address</p>
+                <h3>Shipping Address</h3>
                 <form action="">
                     <input placeholder="Name" type="text" name="" id="">
                     <input placeholder="Last Name" type="text" name="" id="">
-                    <input class="full-width"  placeholder="Company(opcional)" type="text" name="" id="">
+                    <input class="full-width" placeholder="Company(opcional)" type="text" name="" id="">
                     <input placeholder="Street Address" type="text" name="" id="">
                     <input placeholder="Aparment, suite, etc." type="text" name="" id="">
                     <input class="full-width" placeholder="City" type="text" name="" id="">
                     <input placeholder="Country/Region" type="text" name="" id="">
                     <input placeholder="ZIP/Postcode" type="text" name="" id="">
                     <input class="full-width" placeholder="Phone" type="text" name="" id="">
+                    <input value="Pay now" type="submit" />
                 </form>
-            </div> 
+            </div>
         </div>
-        
-        <div id="info-cart" class="info-cart"></div>    
+        <div>
+            <div id="info-cart" class="info-cart"></div>
+            <div id="checkout-total" class="text-center"></div>
+        </div>
     </div>
 
 
 </body>
 <script src="src/Data.js"></script>
 <script src="src/checkout.js"></script>
+
 </html>

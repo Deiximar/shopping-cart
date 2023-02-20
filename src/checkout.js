@@ -1,35 +1,51 @@
 let infoCart = document.getElementById("info-cart");
-let basket =   localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : [];
+let total = document.getElementById('checkout-total');
+
+let basket = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : [];
+
+let calculation = () => {
+    let cartIcon = document.getElementById('cartAmount');
+    cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
+}
 
 let generateCartItems = () => {
     if (basket.length !== 0) {
         return infoCart.innerHTML = basket.map((x) => {
-            let {id, item} = x;
+            let { id, item } = x;
             let search = shopItemsData.find((x) => x.id == id) || [];
-            let {img, name, price } = search;
+            let { img, name, price } = search;
             return `
             <div class="cart-item">
-                <img  width="80px" src="${img}" alt=""/>
+                <img  width="40px" src="${img}" alt=""/>
                 <div class="details">
                     <div class="title-price-x">
-                        <h4 class="title-price">
-                            <p>${name}</p>
-                            <p class="cart-item-price">$ ${price}</p>
-                        </h4>
-                        <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
+                        <h4 class="title-price">${name} (${item})</h4>
+                        <p class="cart-item-price">$ ${item * price}</p>
                     </div>
-
-                    <div class="buttons">
-                        <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-                        <div id="${id}" class="quantity">${item}</div>
-                        <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
-                    </div>
-
-                    <h3>${item * price}</h3>
                 </div>
             </div>
-            ` 
+            `
         }).join('');
-    }};
+    }
+};
 
-    generateCartItems()
+let totalAmount = () => {
+    if (basket.length !== 0) {
+        let amount = basket.map((x) => {
+            let { id, item } = x;
+            let search = shopItemsData.find((y) => y.id == id) || [];
+            return search.price * item;
+        }).reduce((x, y) => x + y, 0);
+
+        total.innerHTML = `
+            <h2>Total Bill: $ ${amount}</h2>
+        `;
+        return amount
+    } else return
+}
+
+totalAmount();
+
+
+generateCartItems();
+calculation();

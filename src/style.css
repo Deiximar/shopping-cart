@@ -17,10 +17,18 @@ a {
 }
 
 input {
-    height: 30px;
-    padding: 5px;
+    height: 40px;
+    padding: 10px;
     border: 1px solid black;
     border-radius: 2px
+}
+
+h3 {
+    margin-bottom: 5px;
+}
+
+#checkout-total {
+    grid-column: 3;
 }
 
 .navbar {
@@ -78,11 +86,12 @@ input {
 }
 
 .details {
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 10px;
     gap: 10px;
-
+    justify-content: center;
 }
 
 .price-quantity {
@@ -142,14 +151,13 @@ input {
  }
 
  .cart-item {
-    border: 2px solid #223843;
+    border: 1px solid #223843;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
  }
 
  .title-price-x {
-    width: 195px;
     display: flex;
     align-items: center;    
     justify-content: space-between;
@@ -184,12 +192,22 @@ input {
     gap: 10px
 }
 
+.info-send form input[type="submit"] {
+    grid-column: 2;
+    background-color: #223843;
+    color: #eff1f3;
+    width: 100px;
+    justify-self: end;
+    border-radius: 4px;
+}
+
 .full-width {
     grid-column: 1 / span 2;
 }
 .info-cart {
     padding-top: 30px;
     display: grid;
+    grid-auto-rows: min-content;
     grid-template-columns: repeat(1, 320px);
     gap: 15px;
     align-items: flex-start;
