@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server"
+    "start": "http-server",
+    "test": "npx playwright test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.35.1"
-  },
-  "dependencies": {
+    "@playwright/test": "^1.35.1",
     "http-server": "^14.1.1"
   }
 }
